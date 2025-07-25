@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fcddec, #d0e8f2);
+  color: #333;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #fcddec, #d0e8f2, #b2dfdb);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #004d40;
+  position: relative;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  margin: 0.3rem;
+}
+
+.section {
+  padding: 2rem 10%;
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Ornamen LOVE di kiri dan kanan === */
+.section::before,
+.section::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  opacity: 0.15;
+  z-index: 0;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); /* love */
+}
+
+.section::before {
+  top: 20px;
+  left: -30px;
+}
+
+.section::after {
+  bottom: 20px;
+  right: -30px;
+}
+
+.section * {
+  position: relative;
+  z-index: 1;
+}
+
+.section h2 {
+  border-left: 5px solid #26a69a;
+  padding-left: 0.8rem;
+  margin-bottom: 1rem;
+  color: #00796b;
+  font-size: 1.4rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+ul li {
+  margin-bottom: 0.8rem;
+}
+
+ul li i {
+  margin-right: 0.5rem;
+  color: #26a69a;
+}
+
+.nested ul {
+  padding-left: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #e0f2f1;
+  font-size: 0.9em;
+  color: #555;
+}
+
+a {
+  color: #00796b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Container gambar dalam setiap section === */
+.section .header-logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* === Styling umum untuk gambar di semua section === */
+.section .header-logo img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* === Efek hover umum === */
+.section .header-logo img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* === Styling khusus untuk gambar fotowisudacantik di header === */
+header .header-logo img[src*="fotowisudacantik.jpg"] {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+}
